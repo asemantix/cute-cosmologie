@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FANTOM — Harvest Now, Decrypt Never. | AION ASEMANTIX™</title>
+<meta name="description" content="FANTOM : navigation Internet indétectable. 7 couches brevetées. Transport asémantique. Anti-quantique structurel.">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#06070b;--s:#0e1017;--s2:#161822;--bd:#252838;--green:#00e5a0;--purple:#a855f7;--red:#ff4757;--w:#e8eaf0;--dim:#8b8fa3;--mut:#4a4e62}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--w);line-height:1.7;overflow-x:hidden}::selection{background:var(--green);color:var(--bg)}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(168,85,247,0.03),transparent 60%),radial-gradient(ellipse at 70% 80%,rgba(0,229,160,0.02),transparent 60%);pointer-events:none}
+.grid-bg{position:fixed;inset:0;background-image:linear-gradient(rgba(0,229,160,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,160,0.015) 1px,transparent 1px);background-size:80px 80px;pointer-events:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(6,7,11,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--bd)}
+.logo{font-family:'JetBrains Mono',monospace;font-size:1rem;font-weight:600;color:var(--green);letter-spacing:0.15em;text-decoration:none}.logo span{color:var(--dim);font-weight:400;font-size:0.78rem;margin-left:8px;letter-spacing:0.25em}
+.nav-r{display:flex;gap:20px;align-items:center}.nav-r a{font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--dim);text-decoration:none;transition:color 0.3s;font-weight:500}.nav-r a:hover{color:var(--green)}
+.btn-g{padding:10px 22px;background:var(--green);color:var(--bg);font-family:'JetBrains Mono',monospace;font-size:0.78rem;font-weight:600;letter-spacing:0.12em;border:none;border-radius:4px;cursor:pointer;text-decoration:none;transition:all 0.3s;text-transform:uppercase;display:inline-block}.btn-g:hover{box-shadow:0 0 30px rgba(0,229,160,0.4);transform:translateY(-2px)}
+.btn-o{padding:10px 22px;border:1px solid var(--green);color:var(--green);background:transparent;font-family:'JetBrains Mono',monospace;font-size:0.78rem;font-weight:600;letter-spacing:0.12em;border-radius:4px;cursor:pointer;text-decoration:none;transition:all 0.3s;text-transform:uppercase;display:inline-block}.btn-o:hover{background:rgba(0,229,160,0.06)}
+.btn-p{padding:10px 22px;border:1px solid var(--purple);color:var(--purple);background:rgba(168,85,247,0.06);font-family:'JetBrains Mono',monospace;font-size:0.78rem;font-weight:600;letter-spacing:0.12em;border-radius:4px;cursor:pointer;text-decoration:none;transition:all 0.3s;text-transform:uppercase;display:inline-block}.btn-p:hover{background:rgba(168,85,247,0.12)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes glow{0%,100%{text-shadow:0 0 20px rgba(0,229,160,0.3)}50%{text-shadow:0 0 40px rgba(0,229,160,0.6)}}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes pulse{0%,100%{opacity:0.4}50%{opacity:1}}
+.reveal{opacity:0;transform:translateY(30px);transition:all 0.8s}.reveal.v{opacity:1;transform:translateY(0)}
+section{position:relative;z-index:1;padding:100px 40px}.sec-inner{max-width:1200px;margin:0 auto}
+.sec-label{font-family:'JetBrains Mono',monospace;font-size:0.75rem;letter-spacing:0.4em;margin-bottom:10px;text-transform:uppercase}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:600;margin-bottom:20px;line-height:1.15}.sec-title span{color:var(--green)}.sec-title .p{color:var(--purple)}.sec-title .r{color:var(--red)}
+.sec-text{font-size:1.08rem;color:var(--dim);font-weight:300;max-width:720px;line-height:1.8;margin-bottom:20px}
+.hero{min-height:100vh;display:flex;align-items:center;padding:100px 40px;position:relative}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 30% 50%,rgba(0,229,160,0.04),transparent 60%),radial-gradient(ellipse 40% 60% at 70% 30%,rgba(168,85,247,0.03),transparent 60%);pointer-events:none}
+.hero-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.hero-badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:0.75rem;letter-spacing:0.3em;color:var(--purple);border:1px solid rgba(168,85,247,0.3);padding:6px 14px;border-radius:20px;margin-bottom:20px;opacity:0;animation:fadeUp 0.6s ease 0.2s forwards}
+.hero h1{font-size:clamp(2.8rem,5.5vw,4.5rem);font-weight:800;line-height:1.05;margin-bottom:16px;letter-spacing:-1px;opacity:0;animation:fadeUp 0.8s ease 0.4s forwards}.hero h1 em{font-style:normal;color:var(--green);animation:glow 3s ease infinite}
+.hero-slogan{font-family:'JetBrains Mono',monospace;font-size:clamp(0.6rem,1.1vw,0.8rem);letter-spacing:0.15em;margin-bottom:20px;opacity:0;animation:fadeUp 0.7s ease 0.5s forwards}.hero-slogan strong{background:linear-gradient(135deg,var(--purple),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{font-size:1.15rem;color:var(--dim);font-weight:300;max-width:500px;margin-bottom:28px;opacity:0;animation:fadeUp 0.8s ease 0.6s forwards}
+.hero-btns{display:flex;gap:12px;opacity:0;animation:fadeUp 0.6s ease 0.8s forwards;flex-wrap:wrap}
+.hero-stats{display:flex;gap:28px;margin-top:28px;opacity:0;animation:fadeUp 0.6s ease 1s forwards;flex-wrap:wrap}
+.hs-n{font-family:'JetBrains Mono',monospace;font-size:1.4rem;font-weight:700;color:var(--green)}.hs-l{font-size:0.75rem;color:var(--dim);letter-spacing:0.15em;margin-top:2px}
+.hero-viz{position:relative;width:100%;aspect-ratio:1;display:flex;align-items:center;justify-content:center}
+.hero-shield-wrap{position:relative;width:85%;height:85%}
+.hero-shield-ring{position:absolute;inset:0;border:2px solid transparent;border-radius:50%;animation:spin linear infinite}
+.hero-shield-ring.outer{border-top-color:var(--green);border-right-color:var(--green);filter:drop-shadow(0 0 15px rgba(0,229,160,0.4));animation-duration:12s}
+.hero-shield-ring.middle{inset:12%;border-bottom-color:var(--purple);border-left-color:var(--purple);animation-duration:9s;animation-direction:reverse;filter:drop-shadow(0 0 12px rgba(168,85,247,0.35))}
+.hero-shield-ring.inner{inset:24%;border-top-color:var(--green);border-right-color:var(--green);animation-duration:7s;filter:drop-shadow(0 0 8px rgba(0,229,160,0.3))}
+.hero-shield-core{position:absolute;inset:32%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(0,229,160,0.08),rgba(168,85,247,0.06));clip-path:polygon(50% 0%,100% 20%,100% 70%,50% 100%,0% 70%,0% 20%);box-shadow:0 0 50px rgba(0,229,160,0.2),inset 0 0 40px rgba(0,229,160,0.08)}
+.hero-shield-core::before{content:'';position:absolute;inset:0;clip-path:polygon(50% 0%,100% 20%,100% 70%,50% 100%,0% 70%,0% 20%);border:2px solid rgba(0,229,160,0.4)}
+.shield-txt{font-family:'Outfit',sans-serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:800;background:linear-gradient(180deg,var(--green),rgba(0,229,160,0.6));-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-1px}
+.shield-sub{font-family:'JetBrains Mono',monospace;font-size:0.75rem;letter-spacing:0.5em;color:var(--green);margin-top:2px;opacity:0.7}
+@keyframes nodeFloat{0%,100%{opacity:0.3;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
+.hero-node{position:absolute;width:10px;height:10px;border-radius:50%;animation:nodeFloat 2.5s ease-in-out infinite}
+.hero-node:nth-child(5){top:2%;left:48%;background:var(--green);box-shadow:0 0 14px var(--green)}
+.hero-node:nth-child(6){top:18%;right:6%;background:var(--purple);box-shadow:0 0 14px var(--purple);animation-delay:0.4s}
+.hero-node:nth-child(7){bottom:18%;right:6%;background:var(--green);box-shadow:0 0 14px var(--green);animation-delay:0.8s}
+.hero-node:nth-child(8){bottom:2%;left:48%;background:var(--purple);box-shadow:0 0 14px var(--purple);animation-delay:1.2s}
+.hero-node:nth-child(9){bottom:18%;left:6%;background:var(--green);box-shadow:0 0 14px var(--green);animation-delay:1.6s}
+.hero-node:nth-child(10){top:18%;left:6%;background:var(--purple);box-shadow:0 0 14px var(--purple);animation-delay:2s}
+.menace{background:linear-gradient(180deg,var(--bg),rgba(248,113,113,0.015),var(--bg))}
+.statement{text-align:center;padding:100px 40px;background:linear-gradient(180deg,var(--bg),rgba(0,229,160,0.02),var(--bg))}
+.statement-label{font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.5em;color:var(--green);margin-bottom:16px;text-transform:uppercase}
+.statement-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:400;line-height:1.3;margin-bottom:12px}
+.statement-title em{font-style:italic;color:var(--green);animation:glow 3s ease infinite}
+.statement-sub{font-size:1.12rem;color:var(--dim);font-weight:300;max-width:650px;margin:0 auto;line-height:1.8}
+.timeline{position:relative;margin:32px 0 28px;padding-left:36px}
+.timeline::before{content:'';position:absolute;left:14px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--red),var(--purple),var(--green))}
+.tl-item{display:flex;align-items:flex-start;gap:20px;margin-bottom:28px;position:relative}
+.tl-year{width:48px;height:48px;background:var(--bg);border:2px solid var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:0.8rem;font-weight:700;color:var(--red);flex-shrink:0;box-shadow:0 0 15px rgba(255,71,87,0.2);position:relative;left:-36px;margin-right:-36px}
+.tl-item:last-child .tl-year{border-color:var(--green);color:var(--green);box-shadow:0 0 15px rgba(0,229,160,0.25)}
+.tl-content{padding-top:8px}
+.tl-content h4{font-size:0.92rem;font-weight:600;margin-bottom:4px;color:var(--w)}
+.tl-content p{font-size:0.9rem;color:var(--dim);line-height:1.6}
+.menace-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:28px}
+.menace-card{padding:18px;background:var(--s);border:1px solid rgba(248,113,113,0.1);border-radius:10px;text-align:center}.menace-card:hover{border-color:rgba(248,113,113,0.25)}.menace-card .icon{font-size:1.6rem;margin-bottom:6px}.menace-card h4{font-size:0.85rem;color:var(--red);margin-bottom:3px;font-weight:600}.menace-card p{font-size:0.85rem;color:var(--dim);line-height:1.4}
+.viz-section{background:var(--s);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+.compare-card{border-radius:14px;padding:24px;position:relative;overflow:hidden;background:var(--s2);border:1px solid var(--bd)}.compare-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.compare-card.classic{border-color:rgba(255,71,87,0.15)}.compare-card.classic::before{background:linear-gradient(90deg,var(--red),transparent)}
+.compare-card.asem{border-color:rgba(168,85,247,0.2)}.compare-card.asem::before{background:linear-gradient(90deg,var(--purple),var(--green))}
+.compare-title{font-size:0.85rem;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}.compare-card.classic .compare-title{color:var(--red)}.compare-card.asem .compare-title{color:var(--purple)}
+.bit-stream{display:flex;flex-wrap:wrap;gap:2px;padding:14px;background:var(--bg);border-radius:8px;border:1px solid var(--bd);margin:10px 0;font-family:'JetBrains Mono',monospace;font-size:10px;line-height:1;max-height:140px;overflow:hidden}
+.bit{width:16px;height:16px;display:flex;align-items:center;justify-content:center;border-radius:2px;transition:all 0.3s}.bit-noise{color:var(--mut)}.bit-msg{color:var(--bg);background:var(--purple);font-weight:700}.bit-msg-hidden{color:var(--mut)}.bit-tls{color:var(--bg);background:var(--red);font-weight:700}
+.step-result{padding:10px 14px;border-radius:8px;margin-top:12px;font-size:0.85rem;font-weight:600}
+.compare-card.classic .step-result{background:rgba(255,71,87,0.06);border:1px solid rgba(255,71,87,0.15);color:var(--red)}
+.compare-card.asem .step-result{background:rgba(0,229,160,0.06);border:1px solid rgba(0,229,160,0.15);color:var(--green)}
+.viz-buttons{text-align:center;margin:16px 0;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.insight-box{padding:20px;border-radius:12px;background:linear-gradient(135deg,rgba(0,229,160,0.04),rgba(168,85,247,0.04));border:1px solid rgba(0,229,160,0.12)}.insight-box h4{color:var(--green);font-size:0.95rem;margin-bottom:6px}.insight-box p{font-size:1.05rem;color:var(--dim);line-height:1.7}
+.sndl-section{background:linear-gradient(180deg,var(--bg),rgba(168,85,247,0.015),var(--bg))}
+.step{display:flex;gap:10px;margin-bottom:10px;padding:10px 14px;border-radius:8px;border:1px solid transparent;transition:all 0.3s}.step:hover{border-color:var(--bd);background:var(--s2)}
+.step-num{font-family:'JetBrains Mono',monospace;font-size:0.78rem;font-weight:700;width:22px;height:22px;border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.compare-card.classic .step-num{background:rgba(255,71,87,0.12);color:var(--red)}.compare-card.asem .step-num{background:rgba(168,85,247,0.12);color:var(--purple)}
+.step-text{font-size:0.95rem;color:var(--dim);line-height:1.5}.step-text strong{color:var(--w);font-weight:600}
+.layers-section{background:linear-gradient(180deg,var(--bg),rgba(0,229,160,0.015),var(--bg))}
+.layer-stack{margin:28px 0;display:flex;flex-direction:column;gap:5px}
+.layer{display:grid;grid-template-columns:36px 150px 1fr;gap:14px;align-items:center;padding:14px 18px;border-radius:10px;border:1px solid transparent;transition:all 0.4s}.layer:hover{border-color:var(--bd);background:var(--s);transform:translateX(4px)}
+.layer-n{font-family:'JetBrains Mono',monospace;font-size:0.8rem;font-weight:700;width:30px;height:30px;display:flex;align-items:center;justify-content:center;border-radius:5px}
+.layer-name{font-family:'JetBrains Mono',monospace;font-size:0.85rem;font-weight:600}.layer-desc{font-size:0.92rem;color:var(--dim);line-height:1.5}
+.layer.hl{border:1px solid rgba(168,85,247,0.2);background:rgba(168,85,247,0.03)}.layer.hl .layer-n{background:rgba(168,85,247,0.15);color:var(--purple)}.layer.hl .layer-name{color:var(--purple)}
+.barriers-section{background:linear-gradient(180deg,var(--bg),rgba(168,85,247,0.02),var(--bg))}
+.barriers{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px 0}
+.barrier{padding:22px;background:var(--s);border:1px solid var(--bd);border-radius:12px;border-left:4px solid var(--purple)}
+.barrier-badge{font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:700;color:var(--purple);background:rgba(168,85,247,0.1);padding:3px 8px;border-radius:4px;display:inline-block;margin-bottom:8px}
+.barrier h4{font-size:0.95rem;margin-bottom:6px}.barrier p{font-size:0.9rem;color:var(--dim);line-height:1.6;margin-bottom:8px}
+.barrier-v{font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:600;color:var(--green);background:rgba(0,229,160,0.06);border:1px solid rgba(0,229,160,0.15);padding:3px 8px;border-radius:4px;display:inline-block}
+.analogy-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0}
+.analogy-card{padding:24px;border-radius:12px;text-align:center}.analogy-card.vault{background:rgba(255,71,87,0.03);border:1px solid rgba(255,71,87,0.12)}.analogy-card.sand{background:rgba(168,85,247,0.03);border:1px solid rgba(168,85,247,0.12)}
+.analogy-icon{font-size:2.8rem;margin-bottom:10px}.analogy-title{font-size:1.05rem;font-weight:700;margin-bottom:6px}.analogy-card.vault .analogy-title{color:var(--red)}.analogy-card.sand .analogy-title{color:var(--purple)}
+.analogy-desc{font-size:1.02rem;color:var(--dim);line-height:1.6}
+.formula-box{text-align:center;padding:32px;margin:28px 0;background:linear-gradient(135deg,rgba(168,85,247,0.04),rgba(0,229,160,0.03));border:1px solid rgba(168,85,247,0.12);border-radius:14px}
+.formula{font-family:'JetBrains Mono',monospace;font-size:clamp(0.55rem,1.3vw,0.8rem);font-weight:700;letter-spacing:1px;margin-bottom:8px;background:linear-gradient(135deg,var(--purple),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.formula-sub{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--dim);font-style:italic}
+.vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0}
+.vs-card{padding:28px;border-radius:14px;background:var(--s);border:1px solid var(--bd);position:relative;overflow:hidden}.vs-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.vs-card.bad{border-color:rgba(255,71,87,0.1)}.vs-card.bad::before{background:linear-gradient(90deg,var(--red),transparent)}.vs-card.good{border-color:rgba(0,229,160,0.1)}.vs-card.good::before{background:linear-gradient(90deg,var(--green),var(--purple))}
+.vs-card h3{font-size:0.95rem;font-weight:600;margin-bottom:14px}.vs-card.bad h3{color:var(--red)}.vs-card.good h3{color:var(--green)}
+.vs-point{display:flex;gap:6px;margin-bottom:8px;font-size:0.85rem;color:var(--dim)}
+.demo-section{background:var(--s);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
+.demo-box{max-width:500px;margin:32px auto;text-align:center}
+.demo-shield{width:180px;height:180px;margin:0 auto 20px;border-radius:50%;position:relative;cursor:pointer}
+.demo-shield .ring{position:absolute;inset:0;border-radius:50%;border:2px solid rgba(0,229,160,0.12);transition:all 0.5s}.demo-shield .ring.r2{inset:15%;border-color:rgba(0,229,160,0.18)}.demo-shield .ring.r3{inset:30%;border-color:rgba(168,85,247,0.18)}
+.demo-shield .core{position:absolute;inset:38%;border-radius:50%;background:rgba(0,229,160,0.08);display:flex;align-items:center;justify-content:center;font-size:1.5rem;transition:all 0.5s}
+.demo-shield.on .ring{border-color:rgba(0,229,160,0.35);animation:spin 8s linear infinite}.demo-shield.on .ring.r2{animation-duration:5s;animation-direction:reverse;border-color:rgba(0,229,160,0.45)}.demo-shield.on .ring.r3{animation-duration:3s;border-color:rgba(168,85,247,0.45)}
+.demo-shield.on .core{background:rgba(0,229,160,0.2);box-shadow:0 0 30px rgba(0,229,160,0.25)}
+.demo-status{font-family:'JetBrains Mono',monospace;font-size:0.75rem;letter-spacing:0.2em;color:var(--dim);margin-bottom:14px}.demo-status.on{color:var(--green)}
+.demo-info{display:none;gap:10px;justify-content:center;flex-wrap:wrap}.demo-info.on{display:flex}
+.demo-tag{font-family:'JetBrains Mono',monospace;font-size:0.82rem;padding:5px 12px;background:var(--bg);border:1px solid var(--bd);border-radius:5px;color:var(--dim)}.demo-tag strong{color:var(--green)}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:36px auto;max-width:900px}
+.price-card{padding:28px;background:var(--s);border:1px solid var(--bd);border-radius:14px;text-align:center;transition:all 0.3s;position:relative}.price-card:hover{border-color:rgba(0,229,160,0.2);transform:translateY(-3px)}
+.price-card.feat{border-color:rgba(0,229,160,0.25);background:linear-gradient(180deg,rgba(0,229,160,0.03),var(--s))}.price-card.feat::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--green),var(--purple))}
+.price-name{font-family:'JetBrains Mono',monospace;font-size:0.75rem;letter-spacing:0.18em;color:var(--dim);margin-bottom:10px}
+.price-amount{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:var(--green);margin-bottom:3px}.price-amount span{font-size:0.75rem;color:var(--dim);font-weight:400}
+.price-desc{font-size:0.8rem;color:var(--dim);margin-bottom:18px}
+.price-feat{list-style:none;text-align:left;margin-bottom:20px}.price-feat li{font-size:0.9rem;color:var(--dim);padding:5px 0;border-bottom:1px solid var(--bd);display:flex;gap:6px;align-items:center}.price-feat li::before{content:'\2713';color:var(--green);font-weight:700;font-size:0.8rem}
+.recruit{background:linear-gradient(180deg,var(--bg),rgba(0,229,160,0.015));border-top:1px solid var(--bd)}
+.recruit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:28px 0}
+.recruit-card{padding:20px;background:var(--s);border:1px solid var(--bd);border-radius:12px;transition:all 0.3s}.recruit-card:hover{border-color:rgba(0,229,160,0.2)}
+.recruit-card h4{font-family:'JetBrains Mono',monospace;font-size:0.85rem;color:var(--green);margin-bottom:5px}.recruit-card p{font-size:0.9rem;color:var(--dim);line-height:1.5}
+.cta{text-align:center;padding:120px 40px;background:radial-gradient(ellipse at 50% 50%,rgba(0,229,160,0.04),transparent 60%)}
+.cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:600;margin-bottom:14px}.cta h2 span{color:var(--green)}
+.cta p{font-size:1.1rem;color:var(--dim);max-width:600px;margin:0 auto 28px}
+.cta .slogan{font-family:'JetBrains Mono',monospace;font-size:clamp(0.7rem,1.5vw,1rem);letter-spacing:0.15em;margin-bottom:32px;background:linear-gradient(135deg,var(--purple),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700}
+footer{border-top:1px solid var(--bd);padding:28px 40px;text-align:center}
+.foot-logo{font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--green);letter-spacing:0.15em;margin-bottom:6px}
+.foot-links{display:flex;gap:20px;justify-content:center;margin-bottom:10px;flex-wrap:wrap}.foot-links a{font-size:0.82rem;color:var(--dim);text-decoration:none;letter-spacing:0.08em}.foot-links a:hover{color:var(--green)}
+.foot-slogan{font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.2em;margin-top:8px;background:linear-gradient(135deg,var(--purple),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:600}
+.foot-copy{font-size:0.78rem;color:var(--dim);opacity:0.4;margin-top:4px}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr}.hero-viz{display:none}.layer{grid-template-columns:32px 1fr}.layer-desc{display:none}.compare-grid,.vs-grid,.analogy-grid{grid-template-columns:1fr}.barriers{grid-template-columns:1fr}.pricing-grid{grid-template-columns:1fr}nav{padding:10px 16px}.nav-r a:not(.btn-g){display:none}}
+/* PROOF CAMELEON */
+.proof-section{background:linear-gradient(180deg,var(--bg),rgba(0,229,160,0.015),var(--bg));border-top:1px solid var(--bd)}
+.proof-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:0;margin:28px 0}
+.proof-stage{padding:24px 18px;border-radius:14px;background:var(--s);border:1px solid var(--bd);text-align:center;transition:all 0.3s}
+.proof-stage:hover{transform:translateY(-3px);border-color:rgba(0,229,160,0.2)}
+.proof-stage.reject{border-color:rgba(255,71,87,0.15);background:rgba(255,71,87,0.04)}
+.proof-stage.accept{border-color:rgba(0,229,160,0.15);background:rgba(0,229,160,0.04)}
+.proof-stage .ps-num{font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:var(--dim);letter-spacing:0.2em;margin-bottom:8px}
+.proof-stage .ps-icon{font-size:2.2rem;margin-bottom:8px;display:block}
+.proof-stage .ps-title{font-size:0.9rem;font-weight:700;margin-bottom:6px}
+.proof-stage .ps-desc{font-size:0.88rem;color:var(--dim);line-height:1.5}
+.proof-arrow{display:flex;flex-direction:column;align-items:center;padding:0 6px}
+.proof-arrow svg{width:36px;height:20px}
+.proof-arrow .pa-label{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--dim);margin-top:3px}
+.proof-canvas-wrap{position:relative;height:280px;background:var(--s);border:1px solid var(--bd);border-radius:14px;overflow:hidden;margin:28px 0}
+.proof-canvas-wrap canvas{width:100%;height:100%}
+.proof-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0}
+.proof-stat{padding:20px;background:var(--s);border:1px solid var(--bd);border-radius:12px;text-align:center;position:relative;overflow:hidden}
+.proof-stat::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.proof-stat.st-red::before{background:linear-gradient(90deg,transparent,var(--red),transparent)}
+.proof-stat.st-green::before{background:linear-gradient(90deg,transparent,var(--green),transparent)}
+.proof-stat.st-purple::before{background:linear-gradient(90deg,transparent,var(--purple),transparent)}
+.proof-stat.st-gold::before{background:linear-gradient(90deg,transparent,#ffd700,transparent)}
+.proof-stat .ps-val{font-family:'JetBrains Mono',monospace;font-size:1.8rem;font-weight:700;margin-bottom:4px}
+.proof-stat.st-red .ps-val{color:var(--red)}.proof-stat.st-green .ps-val{color:var(--green)}.proof-stat.st-purple .ps-val{color:var(--purple)}.proof-stat.st-gold .ps-val{color:#ffd700}
+.proof-stat .ps-lab{font-size:0.8rem;color:var(--dim);letter-spacing:0.08em;text-transform:uppercase}
+.proof-compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0}
+.proof-cmp{border-radius:14px;padding:24px;position:relative;overflow:hidden}
+.proof-cmp::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.proof-cmp.old{background:rgba(255,71,87,0.04);border:1px solid rgba(255,71,87,0.12)}.proof-cmp.old::before{background:linear-gradient(90deg,var(--red),transparent)}
+.proof-cmp.new{background:rgba(0,229,160,0.04);border:1px solid rgba(0,229,160,0.12)}.proof-cmp.new::before{background:linear-gradient(90deg,var(--green),var(--purple))}
+.proof-cmp .pc-badge{font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.15em;margin-bottom:12px}
+.proof-cmp.old .pc-badge{color:var(--red)}.proof-cmp.new .pc-badge{color:var(--green)}
+.proof-cmp h4{font-size:0.95rem;font-weight:700;margin-bottom:14px}
+.proof-cmp.old h4{color:var(--red)}.proof-cmp.new h4{color:var(--green)}
+.proof-cmp .pc-item{display:flex;gap:8px;margin-bottom:10px;font-size:0.82rem;color:var(--dim);line-height:1.5}
+.proof-formula{text-align:center;padding:28px;margin:28px 0;background:linear-gradient(135deg,rgba(0,229,160,0.04),rgba(168,85,247,0.03));border:1px solid rgba(0,229,160,0.12);border-radius:14px}
+.proof-formula .pf-label{font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.25em;color:var(--dim);margin-bottom:12px}
+.proof-formula .pf-line{font-family:'JetBrains Mono',monospace;font-size:0.85rem;font-weight:600;color:var(--w);margin-bottom:6px}
+.proof-formula .pf-line .r{color:var(--red)}.proof-formula .pf-line .g{color:var(--green)}.proof-formula .pf-line .p{color:var(--purple)}
+.proof-formula .pf-result{font-size:2.2rem;font-weight:800;color:var(--green);margin:10px 0 6px}
+.proof-formula .pf-note{font-size:0.88rem;color:var(--dim)}
+@media(max-width:900px){.proof-flow{grid-template-columns:1fr;gap:8px}.proof-arrow{transform:rotate(90deg);padding:4px 0}.proof-stats{grid-template-columns:repeat(2,1fr)}.proof-compare{grid-template-columns:1fr}}
+/* MODAL EMAIL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(6,7,11,0.85);backdrop-filter:blur(12px);z-index:200;align-items:center;justify-content:center}
+.modal-overlay.active{display:flex}
+.modal{background:var(--s);border:1px solid var(--bd);border-radius:16px;padding:36px;max-width:440px;width:90%;position:relative;text-align:center;box-shadow:0 0 60px rgba(0,229,160,0.1)}
+.modal::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--green),var(--purple));border-radius:16px 16px 0 0}
+.modal-close{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--dim);font-size:1.4rem;cursor:pointer;transition:color 0.3s}.modal-close:hover{color:var(--w)}
+.modal-icon{font-size:2.8rem;margin-bottom:14px}
+.modal h3{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;margin-bottom:8px}.modal h3 span{color:var(--green)}
+.modal-desc{font-size:0.85rem;color:var(--dim);margin-bottom:20px;line-height:1.6}
+.modal-input{width:100%;padding:14px 16px;background:var(--bg);border:1px solid var(--bd);border-radius:8px;color:var(--w);font-family:'Outfit',sans-serif;font-size:0.9rem;outline:none;transition:border-color 0.3s;margin-bottom:12px}
+.modal-input:focus{border-color:var(--green)}
+.modal-input::placeholder{color:var(--mut)}
+.modal-submit{width:100%;padding:14px;background:var(--green);color:var(--bg);font-family:'JetBrains Mono',monospace;font-size:0.82rem;font-weight:600;letter-spacing:0.12em;border:none;border-radius:8px;cursor:pointer;transition:all 0.3s;text-transform:uppercase}
+.modal-submit:hover{box-shadow:0 0 30px rgba(0,229,160,0.4);transform:translateY(-1px)}
+.modal-note{font-size:0.78rem;color:var(--mut);margin-top:12px;line-height:1.5}
+.modal-success{display:none;text-align:center;padding:20px 0}
+.modal-success .check{font-size:3rem;margin-bottom:10px}
+.modal-success h4{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--green);margin-bottom:6px}
+.modal-success p{font-size:0.8rem;color:var(--dim)}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<nav><a class="logo" href="index.html">FANTOM <span>AION ASEMANTIX</span></a><div class="nav-r"><a href="fantom-home.html">Fantom Home</a><a href="#pricing">Tarifs</a><a href="#recruit">Recrutement</a><a href="javascript:void(0)" onclick="openModal()" class="btn-g">Acces anticipe</a></div></nav>
+
+<!-- HERO -->
+<section class="hero"><div class="hero-inner"><div>
+<div class="hero-badge">8 BREVETS INPI - TRANSPORT ASEMANTIQUE - TECHNOLOGIE FRANCAISE</div>
+<h1>Harvest Now,<br>Decrypt <em>Never.</em></h1>
+<div class="hero-slogan"><strong>INDETECTABLE - IMBLOCABLE - INCORRELABLE - ANTI-QUANTIQUE</strong></div>
+<p class="hero-sub">Le premier systeme de navigation Internet dont le trafic est structurellement indistinguable du bruit. Pas un VPN. Un fantome.</p>
+<div class="hero-btns"><a href="javascript:void(0)" onclick="openModal()" class="btn-g">Devenir invisible</a><a href="#see" class="btn-p">Voir ce que voit l'adversaire</a></div>
+<div class="hero-stats"><div><div class="hs-n">7</div><div class="hs-l">COUCHES</div></div><div><div class="hs-n">8</div><div class="hs-l">BREVETS</div></div><div><div class="hs-n">0</div><div class="hs-l">LOGS</div></div><div><div class="hs-n">&infin;</div><div class="hs-l">IDENTITES</div></div></div>
+</div><div class="hero-viz"><div class="hero-shield-wrap"><div class="hero-shield-ring outer"></div><div class="hero-shield-ring middle"></div><div class="hero-shield-ring inner"></div><div class="hero-shield-core"><span style="font-size:clamp(2.2rem,4vw,3.5rem)">&#128123;</span></div><div class="hero-node"></div><div class="hero-node"></div><div class="hero-node"></div><div class="hero-node"></div><div class="hero-node"></div><div class="hero-node"></div></div></div></div></section>
+
+<!-- MENACE -->
+<section class="menace" id="threat"><div class="sec-inner reveal">
+<div class="sec-label" style="color:var(--red)">HARVEST NOW, DECRYPT LATER</div>
+<div class="sec-title">Ils stockent vos donn&eacute;es <span class="r">aujourd'hui</span><br>pour les d&eacute;chiffrer <span class="r">demain</span>.</div>
+<p class="sec-text">C'est document&eacute;, officiel, et en cours. La NSA, le GCHQ et d'autres stockent massivement le trafic Internet chiffr&eacute;. Quand les ordinateurs quantiques casseront TLS &mdash; dans 5 &agrave; 15 ans &mdash; tout sera lisible.</p>
+
+<div class="timeline">
+<div class="tl-item"><div class="tl-year">2024</div><div class="tl-content"><h4>La NSA intercepte et stocke votre trafic VPN</h4><p>Des data centers entiers d&eacute;di&eacute;s au stockage massif de donn&eacute;es chiffr&eacute;es. Votre trafic &laquo; prot&eacute;g&eacute; &raquo; y est archiv&eacute;.</p></div></div>
+<div class="tl-item"><div class="tl-year">2029</div><div class="tl-content"><h4>IBM Starling &mdash; Ordinateur quantique mature</h4><p>Les algorithmes de Shor permettront de casser RSA et les courbes elliptiques en quelques heures.</p></div></div>
+<div class="tl-item"><div class="tl-year">2030</div><div class="tl-content"><h4>Vos donn&eacute;es de 2024 sont d&eacute;chiffr&eacute;es</h4><p>Tout ce que vous avez fait, dit, visit&eacute; &mdash; accessible en clair. R&eacute;troactivement.</p></div></div>
+</div>
+
+<div class="menace-grid"><div class="menace-card"><div class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><h4>IP fixe</h4><p>VPN = IP connue, list&eacute;e, blo&ccedil;able</p></div><div class="menace-card"><div class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="10" y1="4" x2="10" y2="20"/></svg></div><h4>Serveur central</h4><p>Tout le trafic concentr&eacute;</p></div><div class="menace-card"><div class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div><h4>Signature DPI</h4><p>OpenVPN, WireGuard d&eacute;tectables</p></div><div class="menace-card"><div class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.5"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div><h4>Corr&eacute;lation</h4><p>Un tunnel = activit&eacute;s li&eacute;es</p></div><div class="menace-card"><div class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8" stroke-dasharray="4 3"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg></div><h4>Shor &rarr; TLS</h4><p>Stockable, cassable en 2035</p></div></div>
+</div></section>
+
+<!-- PAS UN VPN -->
+<section class="statement"><div class="reveal">
+<div class="statement-label">AU-DEL&Agrave; DU VPN</div>
+<div class="statement-title">Pas un VPN.<br>Un <em>fant&ocirc;me.</em></div>
+<p class="statement-sub">7 couches brevet&eacute;es. IP change &agrave; chaque requ&ecirc;te. Transport as&eacute;mantique. Relais aveugles. Pas de serveur central.</p>
+</div></section>
+
+<!-- VISUALISATION ASEMANTIQUE -->
+<section class="viz-section" id="see"><div class="sec-inner reveal">
+<div class="sec-label" style="color:var(--purple)">CE QUE VOIT L'ADVERSAIRE</div>
+<div class="sec-title">Chiffr&eacute; &ne; <span class="p">invisible</span></div>
+<p class="sec-text">Un VPN chiffre vos donn&eacute;es. FANTOM les rend <strong style="color:var(--w)">inexistantes</strong>.</p>
+<div class="compare-grid">
+<div class="compare-card classic"><div class="compare-title">&cross; Flux TLS classique (VPN)</div><div style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;letter-spacing:0.15em;color:var(--red);margin-bottom:8px">CE QUE VOIT L'ADVERSAIRE</div><div class="bit-stream" id="tls-stream"></div><p style="font-size:0.8rem;color:var(--dim);margin-top:6px"><span style="display:inline-block;width:10px;height:10px;background:var(--red);border-radius:2px;vertical-align:middle;margin-right:4px"></span> Messages chiffr&eacute;s &mdash; <strong style="color:var(--red)">identifiables</strong> (en-t&ecirc;tes TLS, tailles variables)</p><div class="step-result">&cross; L'adversaire sait EXACTEMENT quoi stocker pour &laquo; decrypt later &raquo;</div></div>
+<div class="compare-card asem"><div class="compare-title"><span style="animation:pulse 2s infinite">&#9670;</span> Flux as&eacute;mantique (CAMELEON)</div><div style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;letter-spacing:0.15em;color:var(--purple);margin-bottom:8px">CE QUE VOIT LE MEME ADVERSAIRE</div><div class="bit-stream" id="asem-stream"></div><p style="font-size:0.8rem;color:var(--dim);margin-top:6px">Messages <strong style="color:var(--purple)">cach&eacute;s dans le flux</strong> &mdash; statistiquement indistinguables du bruit</p><div class="step-result">&check; L'adversaire ne sait PAS quoi stocker. Harvest Now &rarr; Decrypt NEVER.</div></div>
+</div>
+<div class="viz-buttons"><button onclick="regenerateStreams()" class="btn-o">Regenerer les flux</button><button onclick="revealMessages()" class="btn-p">Reveler les messages caches</button></div>
+<div class="insight-box"><h4>&rarr; Ce que vous venez de voir</h4><p>Nous avons <strong style="color:var(--w)">colori&eacute; les fragments cach&eacute;s</strong> pour vous les montrer. En r&eacute;alit&eacute;, sans le marqueur polymorphe, ces fragments sont <strong style="color:var(--w)">strictement identiques au bruit environnant</strong> &mdash; aucun algorithme, aucune IA, aucun ordinateur quantique ne peut les distinguer. Seul le destinataire, qui poss&egrave;de la cl&eacute; du marqueur, sait lesquels sont les siens.</p></div>
+</div></section>
+
+<!-- SNDL STEP BY STEP -->
+<section class="sndl-section"><div class="sec-inner reveal">
+<div class="sec-label" style="color:var(--red)">STORE NOW, DECRYPT LATER &mdash; ETAPE PAR ETAPE</div>
+<div class="sec-title">Contre TLS : <span class="r">d&eacute;chiffrement total</span>.<br>Contre FANTOM : <span>rien</span>.</div>
+<div class="compare-grid">
+<div class="compare-card classic"><div class="compare-title">&cross; SNDL contre VPN/TLS</div><div class="step"><div class="step-num">1</div><div class="step-text"><strong>Interception</strong> &mdash; capture du flux.</div></div><div class="step"><div class="step-num">2</div><div class="step-text"><strong>Identification</strong> &mdash; en-t&ecirc;tes TLS identifient les paquets. <strong style="color:var(--red)">Trivial.</strong></div></div><div class="step"><div class="step-num">3</div><div class="step-text"><strong>Stockage cibl&eacute;</strong> &mdash; ratio utile : <strong style="color:var(--red)">~100%</strong>.</div></div><div class="step"><div class="step-num">4</div><div class="step-text"><strong>Attente</strong> &mdash; 10-20 ans.</div></div><div class="step"><div class="step-num">5</div><div class="step-text"><strong>Shor</strong> &mdash; casse ECDH. Cl&eacute; de session.</div></div><div class="step"><div class="step-num">6</div><div class="step-text"><strong>Validation</strong> &mdash; structure HTTP visible. <strong style="color:var(--red)">L'adversaire sait qu'il a r&eacute;ussi.</strong></div></div><div class="step-result">&cross; DECHIFFREMENT COMPLET</div></div>
+<div class="compare-card asem"><div class="compare-title">&check; SNDL contre FANTOM</div><div class="step"><div class="step-num">1</div><div class="step-text"><strong>Interception</strong> &mdash; capture du flux.</div></div><div class="step"><div class="step-num">2</div><div class="step-text"><strong>Identification</strong> &mdash; aucune signature, taille fixe. <strong style="color:var(--green)">Impossible.</strong></div></div><div class="step"><div class="step-num">3</div><div class="step-text"><strong>Stockage aveugle</strong> &mdash; signal : <strong style="color:var(--green)">0,2%</strong>. Co&ucirc;t x500.</div></div><div class="step"><div class="step-num">4</div><div class="step-text"><strong>Attente</strong> &mdash; stocke 500x plus.</div></div><div class="step"><div class="step-num">5</div><div class="step-text"><strong>Shor</strong> &mdash; fragment au hasard. <strong style="color:var(--green)">99,8% = bruit.</strong></div></div><div class="step"><div class="step-num">6</div><div class="step-text"><strong>Validation</strong> &mdash; pas d'oracle. <strong style="color:var(--green)">Il ne sait pas s'il a r&eacute;ussi.</strong></div></div><div class="step-result">&check; RIEN. Harvest Now, Decrypt NEVER.</div></div>
+</div></div></section>
+
+<!-- 7 COUCHES -->
+<section class="layers-section" id="layers"><div class="sec-inner reveal">
+<div class="sec-label" style="color:var(--green)">INDETECTABLE</div>
+<div class="sec-title">Les <span>7 couches</span> de protection</div>
+<p class="sec-text">Chaque couche brevet&eacute;e. S&eacute;curit&eacute; multiplicative.</p>
+<div class="layer-stack">
+<div class="layer"><div class="layer-n" style="background:rgba(251,146,60,0.1);color:#f97316">7</div><div class="layer-name" style="color:#f97316">SHADOW CROWD</div><div class="layer-desc">Anonymat collectif &mdash; profil commun au groupe.</div></div>
+<div class="layer"><div class="layer-n" style="background:rgba(251,146,60,0.1);color:#f97316">6</div><div class="layer-name" style="color:#f97316">HYDRA</div><div class="layer-desc">Multi-identit&eacute;s. N &laquo; personnes &raquo; diff&eacute;rentes.</div></div>
+<div class="layer"><div class="layer-n" style="background:rgba(0,212,255,0.1);color:#00d4ff">5</div><div class="layer-name" style="color:#00d4ff">CLOAK</div><div class="layer-desc">Mim&eacute;tisme &mdash; imite Netflix, Zoom, gaming.</div></div>
+<div class="layer"><div class="layer-n" style="background:rgba(0,229,160,0.1);color:var(--green)">4</div><div class="layer-name" style="color:var(--green)">PIP GHOST</div><div class="layer-desc">IP, port, MAC, relais diff&eacute;rents par requ&ecirc;te.</div></div>
+<div class="layer hl"><div class="layer-n">3</div><div class="layer-name">CAMELEON</div><div class="layer-desc">Transport as&eacute;mantique &mdash; bruit. Anti-quantique. Le coeur.</div></div>
+<div class="layer"><div class="layer-n" style="background:rgba(0,229,160,0.1);color:var(--green)">2</div><div class="layer-name" style="color:var(--green)">PIP POLYMORPHE</div><div class="layer-desc">Ratchet crypto. Forward secrecy.</div></div>
+<div class="layer"><div class="layer-n" style="background:rgba(255,255,255,0.04);color:var(--dim)">1</div><div class="layer-name" style="color:var(--dim)">FANTOM INTERNET</div><div class="layer-desc">Multi-connectivit&eacute; : 4G, 5G, WiFi, satellite.</div></div>
+</div>
+
+<div style="margin-top:24px;display:grid;gap:12px">
+<div style="padding:18px;background:var(--s);border-left:3px solid #f97316;border-radius:0 10px 10px 0">
+<div style="font-family:'JetBrains Mono',monospace;font-size:0.85rem;color:#f97316;font-weight:600;margin-bottom:8px">COUCHE 7 &mdash; SHADOW CROWD <span style="font-weight:400;font-size:0.78rem;color:var(--dim)">(FR2600341)</span></div>
+<p style="font-size:1.05rem;color:var(--dim);line-height:1.7;margin:0">Imaginez un stade de 50 000 personnes portant le m&ecirc;me maillot. Qui a marqu&eacute; le but ? Impossible &agrave; dire. SHADOW CROWD fait la m&ecirc;me chose : tous les utilisateurs FANTOM partagent un <strong style="color:var(--w)">profil de trafic identique</strong>. M&ecirc;me volume, m&ecirc;me rythme, m&ecirc;me signature r&eacute;seau. Un observateur voit 10 000 flux identiques &mdash; impossible de distinguer un journaliste d'un &eacute;tudiant.</p>
+</div>
+
+<div style="padding:18px;background:var(--s);border-left:3px solid #f97316;border-radius:0 10px 10px 0">
+<div style="font-family:'JetBrains Mono',monospace;font-size:0.85rem;color:#f97316;font-weight:600;margin-bottom:8px">COUCHE 6 &mdash; HYDRA <span style="font-weight:400;font-size:0.78rem;color:var(--dim)">(FR2600333)</span></div>
+<p style="font-size:1.05rem;color:var(--dim);line-height:1.7;margin:0">Avec un VPN, vous avez une identit&eacute;. Avec FANTOM, vous en avez <strong style="color:var(--w)">cinq simultan&eacute;ment</strong>. Une consulte les actualit&eacute;s, une autre envoie un mail, une troisi&egrave;me navigue sur un forum. Pour un observateur, ce sont cinq personnes diff&eacute;rentes. Si l'une est compromise, les quatre autres restent intactes. Comme l'hydre mythologique : coupez une t&ecirc;te, les autres survivent.</p>
+</div>
+
+<div style="padding:18px;background:var(--s);border-left:3px solid #00d4ff;border-radius:0 10px 10px 0">
+<div style="font-family:'JetBrains Mono',monospace;font-size:0.85rem;color:#00d4ff;font-weight:600;margin-bottom:8px">COUCHE 5 &mdash; CLOAK <span style="font-weight:400;font-size:0.78rem;color:var(--dim)">(FR2600321)</span></div>
+<p style="font-size:1.05rem;color:var(--dim);line-height:1.7;margin:0">Certains pays bloquent les VPN en d&eacute;tectant leur signature r&eacute;seau. CLOAK rend FANTOM <strong style="color:var(--w)">ind&eacute;tectable</strong> en d&eacute;guisant le trafic : vos donn&eacute;es ressemblent &agrave; un flux Netflix, un appel Zoom ou une partie de jeu en ligne. L'inspection profonde de paquets (DPI) &mdash; la technique utilis&eacute;e par la Chine, la Russie et l'Iran &mdash; ne voit rien d'anormal.</p>
+</div>
+
+<div style="padding:18px;background:var(--s);border-left:3px solid var(--green);border-radius:0 10px 10px 0">
+<div style="font-family:'JetBrains Mono',monospace;font-size:0.85rem;color:var(--green);font-weight:600;margin-bottom:8px">COUCHE 4 &mdash; PIP GHOST <span style="font-weight:400;font-size:0.78rem;color:var(--dim)">(FR2600240)</span></div>
+<p style="font-size:1.05rem;color:var(--dim);line-height:1.7;margin:0">D&eacute;taill&eacute; plus bas. Chaque requ&ecirc;te sort avec une <strong style="color:var(--w)">IP diff&eacute;rente</strong>, un <strong style="color:var(--w)">relais diff&eacute;rent</strong> et une <strong style="color:var(--w)">identit&eacute; cryptographique diff&eacute;rente</strong>. Aucune corr&eacute;lation possible entre deux requ&ecirc;tes successives.</p>
+</div>
+
+<div style="padding:18px;background:var(--s);border-left:3px solid var(--purple);border-radius:0 10px 10px 0">
+<div style="font-family:'JetBrains Mono',monospace;font-size:0.85rem;color:var(--purple);font-weight:600;margin-bottom:8px">COUCHE 3 &mdash; CAM&Eacute;L&Eacute;ON <span style="font-weight:400;font-size:0.78rem;color:var(--dim)">(FR2516793)</span></div>
+<p style="font-size:1.05rem;color:var(--dim);line-height:1.7;margin:0">Le c&oelig;ur de l'as&eacute;manticit&eacute;. CAM&Eacute;L&Eacute;ON transforme chaque fragment en quelque chose qui <strong style="color:var(--w)">ressemble exactement &agrave; du bruit al&eacute;atoire</strong>. Ce n'est pas du chiffrement classique. C'est un marquage polymorphe : chaque fragment passe les tests NIST SP 800-22. Un math&eacute;maticien, un ordinateur quantique, une IA &mdash; personne ne distingue vos donn&eacute;es du bruit cosmique.</p>
+</div>
+
+<div style="padding:18px;background:var(--s);border-left:3px solid var(--green);border-radius:0 10px 10px 0">
+<div style="font-family:'JetBrains Mono',monospace;font-size:0.85rem;color:var(--green);font-weight:600;margin-bottom:8px">COUCHE 2 &mdash; PIP POLYMORPHE <span style="font-weight:400;font-size:0.78rem;color:var(--dim)">(FR2600202)</span></div>
+<p style="font-size:1.05rem;color:var(--dim);line-height:1.7;margin:0">Le moteur cryptographique. PIP POLYMORPHE est un &laquo; ratchet &raquo; &mdash; un cliquet qui avance toujours et ne recule jamais. &Agrave; chaque &eacute;change, il d&eacute;rive de nouvelles cl&eacute;s. M&ecirc;me si un attaquant capture une cl&eacute;, il ne peut <strong style="color:var(--w)">ni d&eacute;chiffrer le pass&eacute;</strong> (cl&eacute;s d&eacute;truites) <strong style="color:var(--w)">ni pr&eacute;dire le futur</strong> (al&eacute;a frais). Forward + backward secrecy.</p>
+</div>
+
+<div style="padding:18px;background:var(--s);border-left:3px solid var(--dim);border-radius:0 10px 10px 0">
+<div style="font-family:'JetBrains Mono',monospace;font-size:0.85rem;color:var(--dim);font-weight:600;margin-bottom:8px">COUCHE 1 &mdash; FANTOM INTERNET <span style="font-weight:400;font-size:0.78rem;color:var(--dim)">(FR2600506)</span></div>
+<p style="font-size:1.05rem;color:var(--dim);line-height:1.7;margin:0">La fondation. FANTOM ne d&eacute;pend pas d'un seul type de connexion. Si le WiFi tombe, FANTOM bascule sur la 4G. Si la 4G est brouill&eacute;e, le Bluetooth mesh, le satellite ou la radio. <strong style="color:var(--w)">Automatiquement</strong>, sans interruption. En zone de guerre, apr&egrave;s une catastrophe, sous censure &mdash; tant qu'il existe un canal quelque part, FANTOM fonctionne.</p>
+</div>
+</div>
+
+</div></section>
+
+<!-- POURQUOI UN VPN NE SUFFIT PAS -->
+<section><div class="sec-inner reveal"><div class="sec-label" style="color:var(--green)">COMPRENDRE</div><div class="sec-title">Pourquoi un VPN <span class="r">ne suffit pas</span></div>
+<p class="sec-text">Un VPN classique cr&eacute;e un tunnel chiffr&eacute; entre votre appareil et un serveur. Votre IP r&eacute;elle est masqu&eacute;e &mdash; mais c'est <strong style="color:var(--w)">tout ce qu'il fait</strong>. Pendant toute votre session, vous gardez la m&ecirc;me IP VPN, le m&ecirc;me certificat, la m&ecirc;me connexion au m&ecirc;me serveur. Si vous allez sur Google puis sur Wikipedia, les deux sites voient la m&ecirc;me IP. Un observateur sait que ces deux visites viennent de la m&ecirc;me personne.</p>
+<p class="sec-text">Pire : votre op&eacute;rateur Internet <strong style="color:var(--w)">voit le tunnel VPN</strong>. Il ne peut pas lire le contenu, mais il sait que vous utilisez un VPN, vers quel serveur, pendant combien de temps, et combien de donn&eacute;es transitent. Dans certains pays, cela suffit &agrave; vous identifier. Et le serveur VPN lui-m&ecirc;me voit <strong style="color:var(--w)">tout votre trafic en clair</strong>.</p>
+</div></section>
+
+<!-- PIP GHOST DETAILED -->
+<section id="ghost"><div class="sec-inner reveal">
+<div class="sec-label" style="color:var(--green)">BREVET FR2600240</div>
+<div class="sec-title"><span>PIP GHOST</span> &mdash; Comment FANTOM vous rend invisible</div>
+<p class="sec-text">PIP GHOST change tout &agrave; chaque requ&ecirc;te. Pas toutes les 30 secondes. <strong style="color:var(--w)">&Agrave; chaque requ&ecirc;te.</strong> Vous tapez google.com &mdash; une identit&eacute;. Vous tapez wikipedia.org &mdash; une autre identit&eacute;, un autre chemin, une autre IP de sortie.</p>
+
+<div style="display:grid;gap:12px;margin:20px 0">
+<div style="padding:18px;background:var(--s);border:1px solid rgba(0,229,160,0.12);border-radius:10px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:0.85rem;color:var(--green);font-weight:600;margin-bottom:8px">&Eacute;TAPE 1 &mdash; Votre appareil pr&eacute;pare la requ&ecirc;te</div>
+<p style="font-size:1.05rem;color:var(--dim);line-height:1.7">Vous tapez google.com. Votre appareil chiffre la requ&ecirc;te en couches, comme un oignon. Chaque couche est destin&eacute;e &agrave; un relais diff&eacute;rent. Chaque couche est du bruit &mdash; indistinguable de donn&eacute;es al&eacute;atoires.</p>
+</div>
+<div style="padding:18px;background:var(--s);border:1px solid rgba(0,212,255,0.12);border-radius:10px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:0.85rem;color:#00d4ff;font-weight:600;margin-bottom:8px">&Eacute;TAPE 2 &mdash; Le relais 1 transmet sans comprendre</div>
+<p style="font-size:1.05rem;color:var(--dim);line-height:1.7">Le premier relais (par exemple &agrave; Francfort) re&ccedil;oit un bloc de bruit. Il sait juste qu'il doit le transmettre au relais 2. <strong style="color:var(--w)">Il ne sait pas d'o&ugrave; &ccedil;a vient</strong>, ni ce que c'est, ni o&ugrave; &ccedil;a va.</p>
+</div>
+<div style="padding:18px;background:var(--s);border:1px solid rgba(168,85,247,0.12);border-radius:10px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:0.85rem;color:var(--purple);font-weight:600;margin-bottom:8px">&Eacute;TAPE 3 &mdash; Le relais 2 transmet sans comprendre</div>
+<p style="font-size:1.05rem;color:var(--dim);line-height:1.7">Le deuxi&egrave;me relais (par exemple &agrave; Tokyo) re&ccedil;oit un bloc, enl&egrave;ve sa couche de chiffrement, et transmet au relais 3. Lui non plus <strong style="color:var(--w)">ne sait rien</strong> &mdash; ni l'origine, ni la destination finale.</p>
+</div>
+<div style="padding:18px;background:var(--s);border:1px solid rgba(249,115,22,0.12);border-radius:10px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:0.85rem;color:#f97316;font-weight:600;margin-bottom:8px">&Eacute;TAPE 4 &mdash; Le relais de sortie contacte Google</div>
+<p style="font-size:1.05rem;color:var(--dim);line-height:1.7">Le dernier relais enl&egrave;ve la derni&egrave;re couche et obtient la requ&ecirc;te : &laquo; GET google.com &raquo;. Il l'envoie &agrave; Google. Google r&eacute;pond. Le relais chiffre la r&eacute;ponse et la renvoie par le chemin inverse.</p>
+</div>
+</div>
+
+<div style="padding:18px;background:rgba(0,229,160,0.04);border:1px solid rgba(0,229,160,0.15);border-radius:10px;margin:16px 0">
+<div style="font-family:'JetBrains Mono',monospace;font-size:0.85rem;color:var(--green);font-weight:600;margin-bottom:8px">CE QUI VOUS PROT&Egrave;GE</div>
+<p style="font-size:0.95rem;color:var(--dim);line-height:1.8"><strong style="color:var(--w)">Le relais 1</strong> conna&icirc;t votre IP mais pas la destination.<br><strong style="color:var(--w)">Le relais 3</strong> conna&icirc;t la destination mais pas votre IP.<br><strong style="color:var(--w)">Le relais 2</strong> ne conna&icirc;t ni l'un ni l'autre.<br>Et les trois <strong style="color:var(--green)">changent &agrave; la requ&ecirc;te suivante</strong>.</p>
+</div>
+
+<div class="sec-title" style="font-size:clamp(1.4rem,3vw,2rem);margin-top:30px">Ce qui change &agrave; <span>chaque requ&ecirc;te</span></div>
+
+<div style="display:grid;gap:12px;margin:16px 0">
+<div style="padding:16px 18px;background:var(--s);border-left:3px solid var(--green);border-radius:0 10px 10px 0">
+<div style="font-weight:600;color:var(--w);margin-bottom:6px;font-size:0.95rem">Nouvelle IP</div>
+<p style="font-size:1.05rem;color:var(--dim);line-height:1.7;margin:0">Votre requ&ecirc;te sort avec l'adresse IP du relais de sortie &mdash; pas la v&ocirc;tre. La requ&ecirc;te suivante sortira par un autre relais, avec une autre IP. Google et Wikipedia ne peuvent pas savoir que c'est la m&ecirc;me personne.</p>
+</div>
+<div style="padding:16px 18px;background:var(--s);border-left:3px solid #00d4ff;border-radius:0 10px 10px 0">
+<div style="font-weight:600;color:var(--w);margin-bottom:6px;font-size:0.95rem">Nouveau relais</div>
+<p style="font-size:1.05rem;color:var(--dim);line-height:1.7;margin:0">FANTOM maintient un r&eacute;seau de 50 &agrave; 100+ relais dans le monde. Pour chaque requ&ecirc;te, FANTOM choisit un chemin diff&eacute;rent. Ce n'est pas comme un VPN o&ugrave; vous restez connect&eacute; au m&ecirc;me serveur &agrave; Amsterdam pendant toute la session.</p>
+</div>
+<div style="padding:16px 18px;background:var(--s);border-left:3px solid var(--purple);border-radius:0 10px 10px 0">
+<div style="font-weight:600;color:var(--w);margin-bottom:6px;font-size:0.95rem">Nouvelle identit&eacute; cryptographique</div>
+<p style="font-size:1.05rem;color:var(--dim);line-height:1.7;margin:0">Pour chaque requ&ecirc;te, FANTOM g&eacute;n&egrave;re une nouvelle paire de cl&eacute;s &eacute;ph&eacute;m&egrave;re (ML-KEM post-quantique), un nouveau handshake, un nouveau certificat jetable. M&ecirc;me si quelqu'un intercepte deux de vos &eacute;changes, il ne peut pas prouver qu'ils viennent du m&ecirc;me appareil.</p>
+</div>
+</div>
+
+</div></section>
+
+<!-- VPN vs FANTOM -->
+<section><div class="sec-inner reveal"><div class="sec-label" style="color:var(--green)">COMPARAISON</div><div class="sec-title">VPN classique vs <span>FANTOM</span></div>
+<div class="vs-grid"><div class="vs-card bad"><h3>&cross; VPN classique</h3><div class="vs-point"><span>&cross;</span> IP fixe, list&eacute;e</div><div class="vs-point"><span>&cross;</span> Serveur central</div><div class="vs-point"><span>&cross;</span> Signature DPI</div><div class="vs-point"><span>&cross;</span> Identit&eacute; unique</div><div class="vs-point"><span>&cross;</span> Tunnel TLS stockable</div><div class="vs-point"><span>&cross;</span> Handshake d&eacute;tectable</div></div>
+<div class="vs-card good"><h3>&check; FANTOM</h3><div class="vs-point"><span>&check;</span> IP change par requ&ecirc;te</div><div class="vs-point"><span>&check;</span> Relais aveugles, z&eacute;ro log</div><div class="vs-point"><span>&check;</span> Transport = bruit</div><div class="vs-point"><span>&check;</span> N identit&eacute;s (HYDRA)</div><div class="vs-point"><span>&check;</span> Anti-quantique structurel</div><div class="vs-point"><span>&check;</span> 0 handshake, 1 RTT</div></div></div>
+</div></section>
+
+<!-- 3 BARRIERES -->
+<section class="barriers-section" id="barriers"><div class="sec-inner reveal">
+<div class="sec-label" style="color:var(--purple)">LES 3 BARRIERES ANTI-QUANTIQUES</div>
+<div class="sec-title">Pourquoi le quantique est <span class="p">impuissant</span></div>
+<p class="sec-text">Probl&egrave;mes d'<strong style="color:var(--w)">information</strong>, pas de calcul. La puissance est hors sujet.</p>
+<div class="barriers">
+<div class="barrier"><div class="barrier-badge">BARRIERE 1</div><h4>Ce fragment est-il un message ?</h4><p>Indistinguable du bruit (NIST SP 800-22). Probl&egrave;me d'information.</p><div class="barrier-v">QUANTIQUE &rarr; INUTILE</div></div>
+<div class="barrier"><div class="barrier-badge">BARRIERE 2</div><h4>Ai-je la bonne cl&eacute; ?</h4><p>Grover a besoin d'un oracle. Pas de structure = pas d'oracle.</p><div class="barrier-v">GROVER &rarr; INUTILE</div></div>
+<div class="barrier"><div class="barrier-badge">BARRIERE 3</div><h4>Li&eacute; &agrave; un autre fragment ?</h4><p>Marqueur polymorphe. Non-corr&eacute;labilit&eacute; par PRF.</p><div class="barrier-v">SHOR &rarr; HORS SUJET</div></div>
+</div>
+<div class="analogy-grid">
+<div class="analogy-card vault"><div class="analogy-icon">&#128274;</div><div class="analogy-title">Cryptographie = Coffre-fort</div><div class="analogy-desc">L'adversaire voit le coffre. Il lui faut la cl&eacute;. Le quantique est un meilleur crocheteur.</div></div>
+<div class="analogy-card sand"><div class="analogy-icon">&#127958;</div><div class="analogy-title">As&eacute;manticit&eacute; = Grain de sable</div><div class="analogy-desc">Milliards de grains identiques. Lequel est le message ? S'il en casse un, il ne sait pas si c'est du sable. Chaque grain change &agrave; chaque mar&eacute;e.</div></div>
+</div>
+<div class="formula-box"><div class="formula">HARVEST NOW &rarr; DECRYPT NEVER</div><div class="formula-sub">On casse, on n'a rien. On stocke, on stocke du bruit. On corr&egrave;le, on corr&egrave;le des fant&ocirc;mes.</div></div>
+</div></section>
+
+<!-- DEMO -->
+<section class="demo-section"><div class="sec-inner reveal" style="text-align:center">
+<div class="sec-label" style="color:var(--green)">DEMO INTERACTIVE</div>
+<div class="sec-title">Activez le <span>fant&ocirc;me</span></div>
+<div class="demo-box"><div class="demo-shield" id="shield" onclick="toggleDemo()"><div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div><div class="core">&#128123;</div></div>
+<div class="demo-status" id="status">CLIQUEZ POUR ACTIVER</div>
+<div class="demo-info" id="info"><div class="demo-tag">IP : <strong id="dip">&mdash;</strong></div><div class="demo-tag">Relais : <strong id="drelay">&mdash;</strong></div><div class="demo-tag">Requ&ecirc;te : <strong id="dtimer">&mdash;</strong></div><div class="demo-tag">Transport : <strong style="color:var(--purple)">ASEMANTIQUE</strong></div></div></div>
+</div></section>
+
+<!-- PROOF CAMELEON -->
+<section class="proof-section" id="proof"><div class="sec-inner reveal">
+<div class="sec-label" style="color:var(--green)">BREVET FR2516793 &mdash; PREUVE D'EFFICACIT&Eacute;</div>
+<div class="sec-title">CAM&Eacute;L&Eacute;ON &mdash; <span>rejeter le bruit avant de l'analyser</span></div>
+<p class="sec-text">Filtrage as&eacute;mantique en O(k). 12 bits marqueurs v&eacute;rifi&eacute;s instantan&eacute;ment &mdash; z&eacute;ro CPU crypto. 98,5% du bruit &eacute;limin&eacute; avant tout d&eacute;chiffrement.</p>
+
+<div class="proof-flow">
+<div class="proof-stage"><div class="ps-num">&Eacute;TAPE 01</div><div class="ps-icon">&#128225;</div><div class="ps-title">Paquet entrant</div><div class="ps-desc">10 000 paquets arrivent<br>sur le relay</div></div>
+<div class="proof-arrow"><svg viewBox="0 0 40 24"><path d="M4 12 L30 12 M24 6 L30 12 L24 18" stroke="#4a4e62" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+<div class="proof-stage reject"><div class="ps-num">FILTRE 12 BITS</div><div class="ps-icon">&#129422;</div><div class="ps-title">Marqueurs CAM&Eacute;L&Eacute;ON</div><div class="ps-desc">V&eacute;rifie 12 bits marqueurs<br><strong style="color:var(--red)">0 CPU crypto</strong><br>Rejet imm&eacute;diat si KO</div></div>
+<div class="proof-arrow"><svg viewBox="0 0 40 24"><path d="M4 12 L30 12 M24 6 L30 12 L24 18" stroke="#4a4e62" stroke-width="2" fill="none" stroke-linecap="round"/></svg><div class="pa-label">0.2%</div></div>
+<div class="proof-stage accept"><div class="ps-num">VALID&Eacute;S</div><div class="ps-icon">&#128275;</div><div class="ps-title">D&eacute;chiffrement</div><div class="ps-desc">Seulement ~150 paquets<br>passent au d&eacute;chiffrement<br>crypto complet</div></div>
+</div>
+
+<div class="proof-canvas-wrap"><canvas id="proofCanvas"></canvas></div>
+
+<div class="proof-stats">
+<div class="proof-stat st-red"><div class="ps-val">9 850</div><div class="ps-lab">Rejet&eacute;s sans crypto</div></div>
+<div class="proof-stat st-green"><div class="ps-val">150</div><div class="ps-lab">Pass&eacute;s au filtre</div></div>
+<div class="proof-stat st-purple"><div class="ps-val">0</div><div class="ps-lab">CPU crypto utilis&eacute;</div></div>
+<div class="proof-stat st-gold"><div class="ps-val">98.5%</div><div class="ps-lab">Efficacit&eacute; CAM&Eacute;L&Eacute;ON</div></div>
+</div>
+
+<div class="sec-title" style="font-size:clamp(1.4rem,3vw,2rem);margin-top:20px">Pourquoi c'est <span>r&eacute;volutionnaire</span></div>
+<div class="proof-compare">
+<div class="proof-cmp old"><div class="pc-badge">&cross; APPROCHE CLASSIQUE</div><h4>Tout d&eacute;chiffrer</h4>
+<div class="pc-item"><span>&#9888;&#65039;</span><span>Chaque paquet soumis au d&eacute;chiffrement crypto complet</span></div>
+<div class="pc-item"><span>&#128293;</span><span>10 000 op&eacute;rations CPU co&ucirc;teuses pour 150 paquets l&eacute;gitimes</span></div>
+<div class="pc-item"><span>&#128128;</span><span>Vuln&eacute;rable aux DDoS &mdash; le serveur s'effondre sous la charge crypto</span></div>
+<div class="pc-item"><span>&#128012;</span><span>Latence &eacute;lev&eacute;e, co&ucirc;t &eacute;nerg&eacute;tique massif</span></div>
+</div>
+<div class="proof-cmp new"><div class="pc-badge">&check; BREVET CAM&Eacute;L&Eacute;ON</div><h4>Filtrer d'abord</h4>
+<div class="pc-item"><span>&#9889;</span><span>12 bits marqueurs v&eacute;rifi&eacute;s instantan&eacute;ment &mdash; aucun calcul crypto</span></div>
+<div class="pc-item"><span>&#128737;&#65039;</span><span>98,5% du bruit &eacute;limin&eacute; avant tout d&eacute;chiffrement</span></div>
+<div class="pc-item"><span>&#129422;</span><span>Immunit&eacute; aux DDoS &mdash; les paquets ill&eacute;gitimes ne consomment rien</span></div>
+<div class="pc-item"><span>&#128640;</span><span>Seulement 150 d&eacute;chiffrements au lieu de 10 000</span></div>
+</div>
+</div>
+
+<div class="proof-formula">
+<div class="pf-label">FORMULE D'EFFICACIT&Eacute;</div>
+<div class="pf-line">Efficacit&eacute; = <span class="r">Rejet&eacute;s sans crypto</span> / Total paquets</div>
+<div class="pf-line">= <span class="r">9 850</span> / 10 000</div>
+<div class="pf-result">= 98.5%</div>
+<div class="pf-note">des paquets parasites &eacute;limin&eacute;s <strong style="color:var(--w)">sans aucune d&eacute;pense cryptographique</strong></div>
+</div>
+
+</div></section>
+
+<!-- PRICING -->
+<section id="pricing"><div class="sec-inner reveal">
+<div class="sec-label" style="color:var(--green);text-align:center">TARIFS</div>
+<div class="sec-title" style="text-align:center">Simple, <span>anonyme</span>, sans engagement</div>
+<p class="sec-text" style="text-align:center;margin:0 auto 12px">Pas d'email. Pas de mot de passe. Bitcoin, Lightning, Monero ou carte pr&eacute;pay&eacute;e.</p>
+<div class="pricing-grid">
+<div class="price-card"><div class="price-name">GRATUIT</div><div class="price-amount">0&euro;</div><div class="price-desc">D&eacute;couvrir</div><ul class="price-feat"><li>500 Mo/jour</li><li>1 identit&eacute;</li><li>Relais communautaires</li><li>Transport as&eacute;mantique</li><li>Navigateur int&eacute;gr&eacute;</li></ul><a href="#" class="btn-o" style="display:block;text-align:center;width:100%">T&eacute;l&eacute;charger</a></div>
+<div class="price-card feat"><div class="price-name">FANTOME</div><div class="price-amount">7,99&euro; <span>/mois</span></div><div class="price-desc">L'invisibilit&eacute; compl&egrave;te</div><ul class="price-feat"><li>Volume illimit&eacute;</li><li>5 identit&eacute;s HYDRA</li><li>50-100+ relais, 15+ pays</li><li>Tous profils CLOAK</li><li>P2P natif</li><li>Proxy syst&egrave;me</li><li>Choix pays</li></ul><a href="#" class="btn-g" style="display:block;text-align:center;width:100%">S'abonner</a></div>
+<div class="price-card"><div class="price-name">CONTRIBUTEUR</div><div class="price-amount">0&euro;</div><div class="price-desc">Contribuez un relais</div><ul class="price-feat"><li>Acc&egrave;s Fant&ocirc;me complet</li><li>Gratuit = votre relais</li><li>Script fourni</li><li>VPS d&egrave;s 3&euro;/mois</li><li>Renforcez le r&eacute;seau</li></ul><a href="#" class="btn-o" style="display:block;text-align:center;width:100%">Contribuer</a></div>
+</div></div></section>
+
+<!-- RECRUTEMENT -->
+<section class="recruit" id="recruit"><div class="sec-inner reveal">
+<div class="sec-label" style="color:var(--green)">NOUS RECRUTONS</div>
+<div class="sec-title">Construisez le <span>futur</span> de la vie priv&eacute;e</div>
+<p class="sec-text">8 brevets. 7 couches. Transport as&eacute;mantique. Nous cherchons les d&eacute;veloppeurs capables de le construire.</p>
+<div class="recruit-grid">
+<div class="recruit-card"><h4>Rust + Cryptographie</h4><p>Ratchet PIP, marqueur CAMELEON, AES-256-GCM. Contributeur ring/rustls. 80-120K&euro;.</p></div>
+<div class="recruit-card"><h4>R&eacute;seau Bas Niveau</h4><p>VpnService Android, NEPacketTunnel iOS. Exp&eacute;rience Tor/WireGuard. 60-100K&euro;.</p></div>
+<div class="recruit-card"><h4>React Native</h4><p>App mobile, bridge FFI Rust, UI/UX. 50-80K&euro;.</p></div>
+<div class="recruit-card"><h4>DevOps Multi-Cloud</h4><p>Terraform + Ansible, VPS &agrave; 3&euro;. Freelance.</p></div>
+</div>
+<div style="text-align:center;margin-top:24px"><a href="recrutement.html" class="btn-g">Voir les postes detailles</a><p style="font-size:0.8rem;color:var(--dim);margin-top:10px">recrutement@asemantix.tech - GitHub obligatoire</p></div>
+</div></section>
+
+<!-- CTA -->
+<section class="cta"><div class="reveal">
+<div class="sec-label" style="color:var(--green);text-align:center">LE FUTUR EST ASEMANTIQUE</div>
+<h2>En 2029, il sera <span>trop tard</span>.</h2>
+<p>Les donn&eacute;es que vous g&eacute;n&eacute;rez aujourd'hui seront d&eacute;cryptables demain. Sauf si elles n'ont <strong>aucun sens</strong>.</p>
+<div class="slogan">HARVEST NOW, DECRYPT NEVER.</div>
+<a href="javascript:void(0)" onclick="openModal()" class="btn-g" style="font-size:0.75rem;padding:14px 36px">Devenir un fantome</a>
+</div></section>
+
+<footer><div class="foot-logo">FANTOM</div><div class="foot-links"><a href="https://asemantix.tech">AION ASEMANTIX</a><a href="#see">Visualisation</a><a href="#layers">7 couches</a><a href="#barriers">Anti-quantique</a><a href="#pricing">Tarifs</a><a href="#recruit">Recrutement</a><a href="mailto:contact@asemantix.tech">Contact</a></div><div class="foot-slogan">HARVEST NOW, DECRYPT NEVER.</div><div class="foot-copy">&copy; 2026 AION ASEMANTIX - 8 brevets INPI - Technologie francaise</div></footer>
+
+<!-- MODAL EMAIL -->
+<div class="modal-overlay" id="emailModal" onclick="if(event.target===this)closeModal()">
+<div class="modal">
+<button class="modal-close" onclick="closeModal()">&times;</button>
+<div id="modalForm">
+<div class="modal-icon">&#128123;</div>
+<h3>Rejoignez les <span>fant&ocirc;mes</span></h3>
+<p class="modal-desc">Laissez votre email pour &ecirc;tre pr&eacute;venu d&egrave;s le lancement de la b&ecirc;ta. Aucun spam &mdash; une seule notification.</p>
+<input type="email" class="modal-input" id="emailInput" placeholder="votre@email.com" autocomplete="email">
+<button class="modal-submit" onclick="submitEmail()">ME PR&Eacute;VENIR AU LANCEMENT</button>
+<div class="modal-note">Votre email est stock&eacute; uniquement pour la notification b&ecirc;ta.<br>Aucune donn&eacute;e partag&eacute;e. Jamais.</div>
+</div>
+<div class="modal-success" id="modalSuccess">
+<div class="check">&#10003;</div>
+<h4>Vous &ecirc;tes sur la liste.</h4>
+<p>Nous vous contacterons d&egrave;s la b&ecirc;ta.<br>HARVEST NOW, DECRYPT NEVER.</p>
+</div>
+</div>
+</div>
+
+<script>
+// MODAL EMAIL
+function openModal(){document.getElementById('emailModal').classList.add('active');document.getElementById('emailInput').focus()}
+function closeModal(){document.getElementById('emailModal').classList.remove('active')}
+function submitEmail(){var e=document.getElementById('emailInput').value.trim();if(!e||!e.includes('@')||!e.includes('.')){document.getElementById('emailInput').style.borderColor='var(--red)';return}
+document.getElementById('modalForm').style.display='none';document.getElementById('modalSuccess').style.display='block';
+fetch('https://formspree.io/f/YOUR_FORM_ID',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:e,source:'fantom-beta',date:new Date().toISOString()})}).catch(function(){});
+setTimeout(closeModal,2500)}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});
+
+var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('v')})},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+
+var msgPos=new Set();
+function rB(){return Math.random()>0.5?'1':'0'}
+function genTLS(){var el=document.getElementById('tls-stream');el.innerHTML='';for(var i=0;i<300;i++){var m=(i>=20&&i<45)||(i>=70&&i<110)||(i>=150&&i<180)||(i>=220&&i<260);var b=document.createElement('span');b.className='bit '+(m?'bit-tls':'bit-noise');b.textContent=rB();el.appendChild(b)}}
+function genAsem(s){var el=document.getElementById('asem-stream');el.innerHTML='';msgPos.clear();[37,89,134,198,251].forEach(function(st){for(var i=st;i<st+8&&i<300;i++)msgPos.add(i)});for(var i=0;i<300;i++){var isM=msgPos.has(i);var b=document.createElement('span');b.className='bit '+(s&&isM?'bit-msg':(isM?'bit-msg-hidden':'bit-noise'));b.textContent=rB();el.appendChild(b)}}
+function regenerateStreams(){genTLS();genAsem(false)}
+function revealMessages(){genAsem(true)}
+genTLS();genAsem(false);
+
+var demoOn=false,demoIv=null;
+var relays=['Paris','Frankfurt','New York','Tokyo','Zurich','Amsterdam','Singapore','Toronto'];
+function rIP(){return Math.floor(Math.random()*223+1)+'.'+Math.floor(Math.random()*255)+'.'+Math.floor(Math.random()*255)+'.'+Math.floor(Math.random()*255)}
+function toggleDemo(){
+if(demoOn){demoOn=false;clearInterval(demoIv);document.getElementById('shield').classList.remove('on');document.getElementById('status').classList.remove('on');document.getElementById('status').textContent='CLIQUEZ POUR ACTIVER';document.getElementById('info').classList.remove('on');return}
+demoOn=true;document.getElementById('shield').classList.add('on');document.getElementById('status').classList.add('on');document.getElementById('status').textContent='FANTOME ACTIF - INDETECTABLE';document.getElementById('info').classList.add('on');demoRot();
+var reqSites=['google.com','wikipedia.org','proton.me','signal.org','lemonde.fr','github.com','reuters.com','bbc.co.uk','nytimes.com','arxiv.org','youtube.com','duckduckgo.com','mozilla.org','linux.org','telegram.org'];var reqIdx=0;
+demoIv=setInterval(function(){reqIdx=(reqIdx+1)%reqSites.length;demoRot();document.getElementById('dtimer').textContent=reqSites[reqIdx];document.getElementById('dtimer').style.transition='opacity 0.15s';document.getElementById('dtimer').style.opacity='0.4';setTimeout(function(){document.getElementById('dtimer').style.opacity='1'},150)},1800)}
+function demoRot(){document.getElementById('dip').textContent=rIP();document.getElementById('drelay').textContent=relays[Math.floor(Math.random()*relays.length)];document.getElementById('dip').style.opacity='0';document.getElementById('drelay').style.opacity='0';setTimeout(function(){document.getElementById('dip').style.opacity='1';document.getElementById('drelay').style.opacity='1'},150)}
+
+// PROOF CAMELEON CANVAS
+(function(){
+var cv=document.getElementById('proofCanvas');if(!cv)return;
+var cx=cv.getContext('2d');
+function rsz(){var r=cv.parentElement.getBoundingClientRect();cv.width=r.width*2;cv.height=r.height*2;cv.style.width=r.width+'px';cv.style.height=r.height+'px';cx.scale(2,2)}
+rsz();window.addEventListener('resize',function(){cx.setTransform(1,0,0,1,0,0);rsz()});
+function gW(){return cv.width/2}function gH(){return cv.height/2}
+var wX=function(){return gW()*0.45};
+function Pkt(){this.reset()}
+Pkt.prototype.reset=function(){var w=gW(),h=gH();this.x=Math.random()*w*0.3+10;this.y=Math.random()*h;this.sz=3+Math.random()*4;this.sp=0.4+Math.random()*1.2;this.leg=Math.random()<0.015;this.st='m';this.op=0.6+Math.random()*0.4;this.ra=(Math.random()-0.5)*Math.PI*0.8;this.rs=0.5+Math.random();this.ps=1+Math.random()*1.5;this.tr=[];this.life=1};
+Pkt.prototype.update=function(){var wx=wX();if(this.st==='m'){this.x+=this.sp;this.tr.push({x:this.x,y:this.y,o:this.op*0.3});if(this.tr.length>8)this.tr.shift();if(this.x>=wx-5)this.st=this.leg?'p':'r'}else if(this.st==='r'){this.x+=Math.cos(this.ra+Math.PI*0.7)*this.rs;this.y+=Math.sin(this.ra)*this.rs*2;this.life-=0.02;this.op=this.life}else if(this.st==='p'){this.x+=this.ps;this.life-=0.008;this.op=this.life;this.tr.push({x:this.x,y:this.y,o:this.op*0.5});if(this.tr.length>12)this.tr.shift()}if(this.life<=0||this.x>gW()+20||this.y<-20||this.y>gH()+20)this.reset()};
+Pkt.prototype.draw=function(c){for(var i=0;i<this.tr.length;i++){var t=this.tr[i];c.beginPath();c.arc(t.x,t.y,this.sz*0.4,0,Math.PI*2);c.fillStyle=this.st==='p'||this.leg?'rgba(0,229,160,'+t.o+')':'rgba(255,71,87,'+(t.o*0.4)+')';c.fill()}c.beginPath();c.arc(this.x,this.y,this.sz,0,Math.PI*2);if(this.st==='r'){c.fillStyle='rgba(255,71,87,'+(this.op*0.6)+')'}else if(this.st==='p'){c.fillStyle='rgba(0,229,160,'+this.op+')';c.shadowColor='rgba(0,229,160,0.5)';c.shadowBlur=10}else{var g=120+Math.random()*80;c.fillStyle='rgba('+g+','+g+','+(g+20)+','+this.op+')'}c.fill();c.shadowBlur=0};
+var pkts=[];for(var i=0;i<120;i++){var p=new Pkt();p.x=Math.random()*gW()*0.4;pkts.push(p)}
+var sY=0,sD=1;
+function dW(){var wx=wX(),h=gH();var gr=cx.createLinearGradient(wx-30,0,wx+30,0);gr.addColorStop(0,'rgba(0,229,160,0)');gr.addColorStop(0.4,'rgba(0,229,160,0.03)');gr.addColorStop(0.5,'rgba(0,229,160,0.12)');gr.addColorStop(0.6,'rgba(0,229,160,0.03)');gr.addColorStop(1,'rgba(0,229,160,0)');cx.fillStyle=gr;cx.fillRect(wx-30,0,60,h);cx.beginPath();cx.moveTo(wx,0);cx.lineTo(wx,h);cx.strokeStyle='rgba(0,229,160,0.4)';cx.lineWidth=2;cx.setLineDash([8,6]);cx.stroke();cx.setLineDash([]);sY+=sD*1.5;if(sY>h||sY<0)sD*=-1;cx.beginPath();cx.moveTo(wx-20,sY);cx.lineTo(wx+20,sY);cx.strokeStyle='rgba(0,229,160,0.8)';cx.lineWidth=2;cx.stroke();cx.beginPath();cx.arc(wx,sY,6,0,Math.PI*2);cx.fillStyle='rgba(0,229,160,0.6)';cx.shadowColor='rgba(0,229,160,0.8)';cx.shadowBlur=15;cx.fill();cx.shadowBlur=0;cx.font='600 11px Outfit,sans-serif';cx.textAlign='center';cx.fillStyle='rgba(255,71,87,0.5)';cx.fillText('BRUIT — 99.8%',wx*0.5,20);cx.fillStyle='rgba(0,229,160,0.6)';cx.fillText('FILTRE 12 BITS',wx,h-12);cx.fillStyle='rgba(0,229,160,0.5)';cx.fillText('LÉGITIMES — 0.2%',wx+(gW()-wx)*0.5,20)}
+function anim(){var w=gW(),h=gH();cx.clearRect(0,0,w,h);cx.fillStyle='rgba(6,7,11,1)';cx.fillRect(0,0,w,h);dW();for(var i=0;i<pkts.length;i++){pkts[i].update();pkts[i].draw(cx)}requestAnimationFrame(anim)}
+anim()
+})();
+</script>
+</body>
+</html>
